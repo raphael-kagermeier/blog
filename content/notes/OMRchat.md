@@ -2,8 +2,9 @@
 title: "OMRchat in 5 Tagen"
 ---
 
-![Example Image](/content/notes/images/hey raphaelo.png)
- Mit mit dieser einfachen Frage, begannen 5 intensive Tage. 5 Tage an denen ich viel über Prompt Engineering und AI Chatbots lernte.
+![[notes/images/hey-raphaelo.png]]
+![test](/notes/images/hey-raphaelo.png)
+Mit mit dieser einfachen Frage, begannen 5 intensive Tage. 5 Tage an denen ich viel über Prompt Engineering und AI Chatbots lernte.
 
 Als mir Philipp Glöckler - einer der Hosts des Doppelgänger Tech Talk Podcast - schrieb, hatte nichts als einen simplen und hässlichen Prototypen eines Chatbots.
 Etwa 38 Stunden später stand der OMRChat in seiner Rudimentären form. 

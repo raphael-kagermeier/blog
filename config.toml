@@ -1,4 +1,4 @@
-baseURL = "raphael-kagermeier.github.io/blog"
+baseURL = "https://raphael-kagermeier.github.io/blog/"
 languageCode = "de"
 relativeURLs = false
 disablePathToLower = true

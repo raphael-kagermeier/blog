@@ -7,9 +7,6 @@ other = "↳ Let's get you home."
 [all_posts]
 other = "All {{.Title}}"
 
-[last_updated]
-other = "Last updated"
-
 [notes_count]
 other = "notes with this tag"
 
@@ -62,4 +59,4 @@ other = "Search for something..."
 other = "Table of Contents"
 
 [copyright]
-other = "Made by {{ .name }} using <a href=\"https://github.com/jackyzha0/quartz\">Quartz</a>, © {{ .year }}"
+other = "{{ .name }} © {{ .year }}"

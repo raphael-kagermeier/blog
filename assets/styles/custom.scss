@@ -12,6 +12,8 @@
   --outlinegray: #dadada;
   --million-progress-bar-color: var(--secondary);
   --highlighted: #f5dfaf88;
+  --cursor-color: #d8d8d8;
+
 }
 
 [saved-theme="dark"] {
@@ -24,8 +26,50 @@
   --gray: #d4d4d4 !important;
   --lightgray: #292633 !important;
   --outlinegray: #343434 !important;
-  --highlighted: #574010;
+  --highlighted: #d7d7d7;
+  --cursor-color: #5b5b5b;
 }
 
+#page-title {
+  display: flex !important;
+  align-items: end !important;
+}
+
+
+
+.logo {
+  &__cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.5rem;
+    margin-bottom: 5px;
+    background:var(--cursor-color);
+    border-radius: 2px;
+    animation-duration: 1s;
+    animation-name: cursor;
+    animation-delay: 1;
+    animation-iteration-count: infinite;
+    animation-fill-mode: backwards;
+  }
+}
+
+.root-title {
+  animation-duration: 0.5s;
+  animation-name:typein;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes typein {
+  0% { opacity: 0; width: 0;}
+  100% { opacity: 1; }
+}
+
+
+@keyframes cursor {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
 
 

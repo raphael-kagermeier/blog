@@ -7,9 +7,6 @@ other = "↳ Zurück zur Startseite."
 [all_posts]
 other = "Alle {{.Title}}"
 
-[last_updated]
-other = "Zuletzt aktualisiert"
-
 [notes_count]
 other = "Beiträge mit diesem Tag"
 
@@ -62,4 +59,4 @@ other = "Suche nach etwas ..."
 other = "Inhaltsverzeichnis"
 
 [copyright]
-other = "Made by {{ .name }} using <a href=\"https://github.com/jackyzha0/quartz\">Quartz</a>, © {{ .year }}"
+other = "{{ .name }} © {{ .year }}"

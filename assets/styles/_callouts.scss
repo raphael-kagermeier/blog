@@ -1,55 +1,55 @@
 :root {
   --callout-summary: #00b0ff;
-  --callout-summary-accent: #7fd7ff;
+  --callout-summary-accent:#d5d5e3;
   --callout-bug: #f50057;
-  --callout-bug-accent: #ff7aa9;
+  --callout-bug-accent:#d5d5e3;
   --callout-danger: #ff1744;
-  --callout-danger-accent: #ff8aa1;
+  --callout-danger-accent:#d5d5e3;
   --callout-example: #7c4dff;
-  --callout-example-accent: #bda5ff;
+  --callout-example-accent: #d5d5e3;
   --callout-fail: #ff5252;
   --callout-fail-accent: #ffa8a8;
   --callout-info: #00b8d4;
-  --callout-info-accent: #69ebff;
+  --callout-info-accent: #d5d5e3;
   --callout-note: #448aff;
-  --callout-note-accent: #a1c4ff;
-  --callout-question: #64dd17;
-  --callout-question-accent: #b0f286;
+  --callout-note-accent: #c1c1d3;
+  --callout-question: #579b2d;
+  --callout-question-accent:#d5d5e3;
   --callout-quote: #9e9e9e;
-  --callout-quote-accent: #cecece;
+  --callout-quote-accent: #d5d5e3;
   --callout-done: #00c853;
   --callout-done-accent: #63ffa4;
   --callout-important: #00bfa5;
-  --callout-important-accent: #5fffe9;
+  --callout-important-accent: #d5d5e3;
   --callout-warning: #ff9100;
-  --callout-warning-accent: #ffc87f;
+  --callout-warning-accent: #d5d5e3;
 }
 
 [saved-theme=dark] {
   --callout-summary: #00b0ff !important;
-  --callout-summary-accent: #00587f !important;
+  --callout-summary-accent: #464654 !important;
   --callout-bug: #f50057 !important;
-  --callout-bug-accent: #7a002b !important;
+  --callout-bug-accent: #464654 !important;
   --callout-danger: #ff1744 !important;
   --callout-danger-accent: #8b001a !important;
   --callout-example: #7c4dff !important;
-  --callout-example-accent: #2b00a6 !important;
+  --callout-example-accent:#464654 !important;
   --callout-fail: #ff5252 !important;
-  --callout-fail-accent: #a80000 !important;
-  --callout-info: #00b8d4 !important;
-  --callout-info-accent: #005c6a !important;
+  --callout-fail-accent: #464654 !important;
+  --callout-info: #6b6b8e !important;
+  --callout-info-accent: #464654 !important;
   --callout-note: #448aff !important;
-  --callout-note-accent: #003ca1 !important;
-  --callout-question: #64dd17 !important;
-  --callout-question-accent: #006429 !important;
+  --callout-note-accent: #464654 !important;
+  --callout-question: #55a522 !important;
+  --callout-question-accent: #464654 !important;
   --callout-quote: #9e9e9e !important;
   --callout-quote-accent: #4f4f4f !important;
-  --callout-done: #00c853 !important;
-  --callout-done-accent: #006429 !important;
+  --callout-done: #55a522 !important;
+  --callout-done-accent: #464654 !important;
   --callout-important: #00bfa5 !important;
-  --callout-important-accent: #005f52 !important;
+  --callout-important-accent: #464654 !important;
   --callout-warning: #ff9100 !important;
-  --callout-warning-accent: #7f4800 !important;
+  --callout-warning-accent: #464654 !important;
 }
 
 blockquote.callout-collapsible {

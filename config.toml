@@ -1,5 +1,5 @@
-baseURL = "https://quartz.jzhao.xyz/"
-languageCode = "en-us"
+baseURL = "http://localhost:1313"
+languageCode = "de"
 relativeURLs = false
 disablePathToLower = true
 ignoreFiles = [

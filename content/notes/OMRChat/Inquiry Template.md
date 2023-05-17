@@ -23,7 +23,7 @@ Durch diesen Prompt, wird ein passender Satz für ein Vektor Embedding generiert
 
 
 ### Das Ergebnis aus einem Chatverlauf würde dann so aussehen:
-![[notes/images/Inquiry Template example.png]]
+![inquiry template](notes/images/Inquiry-Template.png)
 
 ---
 

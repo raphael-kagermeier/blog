@@ -14,8 +14,8 @@
 		{"id":"ce0c32e6af64da38","x":181,"y":-152,"width":250,"height":60,"type":"text","text":"Vektor Datenbank"},
 		{"id":"0c5e3266267cb9ed","x":521,"y":-244,"width":526,"height":60,"type":"text","text":"Datenbank Ergebnisse inkl. Chat-Verlauf an GPT-4"},
 		{"id":"50737c941bf0675d","x":181,"y":-244,"width":250,"height":60,"type":"text","text":"Datenbank Suche"},
-		{"id":"7810ed08a295ca44","x":534,"y":-1018,"width":185,"height":400,"type":"file","file":"notes/images/A Wann und wo ist der Doppelgänger Tech talk podcast?.png"},
-		{"id":"71721324cc867e2a","x":213,"y":-1018,"width":187,"height":400,"type":"file","file":"notes/images/Q Wann und wo ist der Doppelgänger Tech talk podcast?.png"}
+		{"id":"7810ed08a295ca44","x":534,"y":-1018,"width":185,"height":400,"type":"file","file":"notes/images/A-DG.png"},
+		{"id":"71721324cc867e2a","x":213,"y":-1018,"width":187,"height":400,"type":"file","file":"notes/images/Q-DG.png"}
 	],
 	"edges":[
 		{"id":"507b601e3bb91aeb","fromNode":"8e5ad16561feb25f","fromSide":"right","toNode":"5dd9449bd100c881","toSide":"left"},

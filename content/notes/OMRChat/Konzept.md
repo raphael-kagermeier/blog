@@ -1,8 +1,6 @@
 ---
-title: "OMRchat in 5 Tagen"
+title: "OMRChat"
 ---
-
-![[notes/images/hey-raphaelo.png]]
 ![test](/notes/images/hey-raphaelo.png)
 Mit mit dieser einfachen Frage, begannen 5 intensive Tage. 5 Tage an denen ich viel über Prompt Engineering und AI Chatbots lernte.
 
@@ -23,7 +21,7 @@ Um zu verstehen, wie der Chatbot funktioniert, müssen wir uns zunächst das zug
 ## Daten und Indexierung
    >[!info]-  Diagramm
    >
-   > ![[notes/images/OMRChat diagram.png]]
+   > ![diagram](notes/images/OMRChat-diagram.png)
 
 Die erste Herausforderung bestand darin, alle relevanten Daten von Webseiten wie omr.com zu extrahieren.
 Dafür habe ich einen eigenen OMRCrawler entwickelt, der einen Browser imitiert und versteht, wie der Content richtig abgerufen werden kann – sprich: die richtigen Buttons klicken, um Popups anzuzeigen um dann den wichtigen Text zu extrahieren.
@@ -33,8 +31,7 @@ Anschließend wurden die Textinhalte aufbereitet und in einer Vektor-Datenbank g
 ---
 
 ## Vektor-Datenbank
-Vektoren werden verwendet, um möglichst relevante Inhalte aus der Datenbank zu identifizieren – ein Ansatz, den auch Google nutzt, um semantische Beziehungen zwischen Wörtern zu verstehen und Suchanfragen mit relevanten Inhalten auf Websites abzugleichen.
-https://code.google.com/archive/p/word2vec/
+Vektoren werden verwendet, um möglichst relevante Inhalte aus der Datenbank zu identifizieren – [ein Ansatz](https://code.google.com/archive/p/word2vec/), den auch Google nutzt, um semantische Beziehungen zwischen Wörtern zu verstehen und Suchanfragen mit relevanten Inhalten auf Websites abzugleichen.
 
 Ein Text-Vektor ist eine Liste an Zahlen, die einen bestimmten Text Repräsentiert. Anders wie bei Buchstaben und Wörtern, können wir mit Zahlen die thematische Relevanz durch die Entfernung der Zahlen zueinander Berechnen. So können wir über eine reine Keyword-Suche hinausgehen und thematisch passende Inhalte aus dem OMR-Kosmos finden.
 
@@ -68,9 +65,9 @@ Dieser Satz wird anschließend wie die Texte der Website in einen Vektor verwand
 
 >[!info]- Hier ein Beispiel aus einem fiktiven Chatverlauf:
 >
-> ![[notes/images/Inquiry Template example.png]]
+> ![inquiry template](notes/images/Inquiry-Template.png)
 
-**Wer mehr über die Suchanfrage lernen möchte, kann unter [[notes/Inquiry Template]] die aktuelle und alte Version ansehen.**
+**Wer mehr über die Suchanfrage lernen möchte, kann unter [[notes/OMRChat/Inquiry Template]] die aktuelle und alte Version ansehen.**
 
 >[!tip]- Für Nerds
 >
@@ -81,7 +78,7 @@ Dieser Satz wird anschließend wie die Texte der Website in einen Vektor verwand
 
 ## Die Hochzeit
 Im letzten Schritt senden wir die Textblöcke aus der Datenbank zusammen mit dem Chatverlauf des Nutzers und einer Anweisung an GPT-4. Als Ergebnis erhalten wir eine finale Antwort, die wir dem Nutzer anzeigen können.
-**Eine Detailierte Beschreibung des Finalen Prompts findest du unter: [[notes/Final Prompt]]**
+**Eine Detailierte Beschreibung des Finalen Prompts findest du unter: [[notes/OMRChat/Final Prompt]]**
 
 ## Bonus: Prompt Engineering
 Jetzt, wo wir Beispiele für die Arbeit mit Prompts gesehen haben, wollen wir über das Prompt-Engineering sprechen - eine neu entstehende Fähigkeit an sich.
@@ -98,4 +95,3 @@ Beim Prompt-Engineering geht es um trial and error, ein Wechselspiel aus Iterati
 
 ## Wie gehts weiter
 -> Zusammenfassungen
--> Follow for more

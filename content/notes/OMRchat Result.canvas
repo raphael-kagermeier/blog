@@ -1,0 +1,38 @@
+{
+	"nodes":[
+		{"id":"8e5ad16561feb25f","x":-590,"y":-393,"width":250,"height":60,"type":"text","text":"Events"},
+		{"id":"c23093723776646f","x":-590,"y":-211,"width":250,"height":60,"type":"text","text":"OMR Support"},
+		{"id":"859264ba279bd37e","x":-590,"y":-117,"width":250,"height":60,"type":"text","text":"Austeller"},
+		{"id":"c02ae2484b0eac39","x":-590,"y":-304,"width":250,"height":60,"type":"text","text":"Blog Artikel"},
+		{"id":"d5a4c29f740e7af8","x":181,"y":-546,"width":250,"height":60,"type":"text","text":"Chat Nachricht"},
+		{"id":"3a52f69028c6dbce","x":181,"y":-453,"width":250,"height":60,"type":"text","text":"Inquiry"},
+		{"id":"85733c7e9d4ae705","x":136,"y":-357,"width":341,"height":53,"type":"text","text":"Embedding (OpenAI embedding)"},
+		{"id":"1ccbf3703cddc26d","x":-590,"y":-24,"width":250,"height":60,"type":"text","text":"Zusätzlich Dokumente"},
+		{"id":"efe152ba90897178","x":-590,"y":75,"width":250,"height":60,"type":"text","text":"Artists"},
+		{"id":"5dd9449bd100c881","x":-181,"y":-152,"width":306,"height":60,"type":"text","text":"Indexer (OpenAI embedding)"},
+		{"id":"e37db68804d5f23f","x":501,"y":-546,"width":250,"height":60,"type":"text","text":"Antwort"},
+		{"id":"ce0c32e6af64da38","x":181,"y":-152,"width":250,"height":60,"type":"text","text":"Vektor Datenbank"},
+		{"id":"0c5e3266267cb9ed","x":521,"y":-244,"width":526,"height":60,"type":"text","text":"Datenbank Ergebnisse inkl. Chat-Verlauf an GPT-4"},
+		{"id":"50737c941bf0675d","x":181,"y":-244,"width":250,"height":60,"type":"text","text":"Datenbank Suche"},
+		{"id":"7810ed08a295ca44","x":534,"y":-1018,"width":185,"height":400,"type":"file","file":"notes/images/A Wann und wo ist der Doppelgänger Tech talk podcast?.png"},
+		{"id":"71721324cc867e2a","x":213,"y":-1018,"width":187,"height":400,"type":"file","file":"notes/images/Q Wann und wo ist der Doppelgänger Tech talk podcast?.png"}
+	],
+	"edges":[
+		{"id":"507b601e3bb91aeb","fromNode":"8e5ad16561feb25f","fromSide":"right","toNode":"5dd9449bd100c881","toSide":"left"},
+		{"id":"7ffbd7e9cce556c2","fromNode":"c23093723776646f","fromSide":"right","toNode":"5dd9449bd100c881","toSide":"left"},
+		{"id":"85ca5688cf2ae01b","fromNode":"859264ba279bd37e","fromSide":"right","toNode":"5dd9449bd100c881","toSide":"left"},
+		{"id":"935bfa582e8ce208","fromNode":"1ccbf3703cddc26d","fromSide":"right","toNode":"5dd9449bd100c881","toSide":"left"},
+		{"id":"27a3a7d8c5a5b3c0","fromNode":"5dd9449bd100c881","fromSide":"right","toNode":"ce0c32e6af64da38","toSide":"left"},
+		{"id":"67d0a30452d75cc1","fromNode":"d5a4c29f740e7af8","fromSide":"bottom","toNode":"3a52f69028c6dbce","toSide":"top"},
+		{"id":"bb41e718fd8ff350","fromNode":"85733c7e9d4ae705","fromSide":"bottom","toNode":"50737c941bf0675d","toSide":"top"},
+		{"id":"0472cffb36a64c5d","fromNode":"ce0c32e6af64da38","fromSide":"top","toNode":"50737c941bf0675d","toSide":"bottom"},
+		{"id":"71784a66402eb2dd","fromNode":"50737c941bf0675d","fromSide":"bottom","toNode":"ce0c32e6af64da38","toSide":"top"},
+		{"id":"a5ce7ef0a83b02ae","fromNode":"50737c941bf0675d","fromSide":"right","toNode":"0c5e3266267cb9ed","toSide":"left"},
+		{"id":"f9f8daf361ad84d6","fromNode":"0c5e3266267cb9ed","fromSide":"top","toNode":"e37db68804d5f23f","toSide":"bottom"},
+		{"id":"3af7ea5929c7bb27","fromNode":"efe152ba90897178","fromSide":"right","toNode":"5dd9449bd100c881","toSide":"left"},
+		{"id":"4345fa2055ef3106","fromNode":"3a52f69028c6dbce","fromSide":"bottom","toNode":"85733c7e9d4ae705","toSide":"top"},
+		{"id":"003d4d83dbae04b4","fromNode":"c02ae2484b0eac39","fromSide":"right","toNode":"5dd9449bd100c881","toSide":"left"},
+		{"id":"6660a33dea89e6dd","fromNode":"e37db68804d5f23f","fromSide":"top","toNode":"7810ed08a295ca44","toSide":"bottom"},
+		{"id":"db2bb554bf11fa3f","fromNode":"71721324cc867e2a","fromSide":"bottom","toNode":"d5a4c29f740e7af8","toSide":"top"}
+	]
+}

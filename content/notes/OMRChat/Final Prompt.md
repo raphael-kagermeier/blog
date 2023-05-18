@@ -83,20 +83,11 @@ Zu letzt übergeben wir noch die Inforamtionen aus der Datenbank in Zeile 34.
 >
 >- the current time is ${time}
 >
->  
->
 > CONVERSATION LOG: {conversationHistory}
->
->
 >
 >CONTEXT: {summaries}
 >
-  >
->
 >QUESTION: {question}
 >
->
 >Assistant:
->
->
 >```

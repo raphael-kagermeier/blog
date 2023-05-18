@@ -26,29 +26,29 @@ Durch diesen Prompt, wird ein passender Satz für ein Vektor Embedding generiert
 ![inquiry template](notes/images/Inquiry-Template.png)
 
 ---
-
-## Alte Version:
-In dieser Version habe ich ein anderes Modell (text-davinci-003) verwendet. Die Ausgaben waren leider nicht wirklich Zuverlässig
-
-``` txt
-  Given the following user prompt and conversation log, formulate a question that is the most relevant and will provide the user with an answer from a knowledge base.
-  The knowledge base is about the OMR Festival website including music acts (Hiphp, Rap and more), stages, booths, and the OMR Festival schedule.
-    You should follow the following rules when generating and answer:
-    - Always prioritize the user prompt over the conversation log.
-    - Ignore any conversation log that is not directly related to the user prompt.
-    - Only attempt to answer if a question was posed.
-    - The question should be a single sentence
-    - You should remove any punctuation from the question
-    - You should remove any words that are not relevant to the question
-    - If you are unable to formulate a question, respond with the same USER PROMPT you got.
-    - If the question is about the location, find stages and booths where the name is mentioned
-    - Only if the question contains the word "Pip" replace it with "Philipp Klöckner"
-    - the current time is ${time}
-
-    USER PROMPT: {userPrompt}
-
-    CONVERSATION LOG: {conversationHistory}
-
-    Final answer:
-```
+>[!info]- Alte Version
+>
+>In dieser Version habe ich ein anderes Modell (text-davinci-003) verwendet. Die Ausgaben waren leider nicht wirklich Zuverlässig.
+>
+>``` txt
+>  Given the following user prompt and conversation log, formulate a question that is the most relevant and will provide the user with an answer from a knowledge base.
+>  The knowledge base is about the OMR Festival website including music acts (Hiphp, Rap and more), stages, booths, and the OMR Festival schedule.
+>    You should follow the following rules when generating and answer:
+>    - Always prioritize the user prompt over the conversation log.
+>    - Ignore any conversation log that is not directly related to the user prompt.
+>    - Only attempt to answer if a question was posed.
+>    - The question should be a single sentence
+>    - You should remove any punctuation from the question
+>    - You should remove any words that are not relevant to the question
+>    - If you are unable to formulate a question, respond with the same USER PROMPT you got.
+>    - If the question is about the location, find stages and booths where the name is mentioned
+>    - Only if the question contains the word "Pip" replace it with "Philipp Klöckner"
+>    - the current time is ${time}
+>
+> USER PROMPT: {userPrompt}
+> 
+> CONVERSATION LOG: {conversationHistory}
+> 
+> Final answer:
+> ```
 

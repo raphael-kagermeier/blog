@@ -47,7 +47,8 @@ Durch die Zahlen im Vektor, kann die Distanz der einzelnen Website-Texte zu der 
 
 ## Die Suchanfrage
 
-Nachdem wir nun unsere Texte und deren Vektoren in einer Datenbank gespeichert haben, geht es darum sie abzurufen. Das war eine der größten Herausforderungen. Auch wenn die Ergebnisse besser wurden, kam es immer wieder zu unbeantworteten Fragen. Um besser zu verstehen, was zu solch einem Fehlverhalten führen kann, müssen auf diesen Abschnitt genauer eingehen.
+Nachdem wir nun unsere Texte und deren Vektoren in einer Datenbank gespeichert haben, geht es darum sie abzurufen. 
+Das war eine der größten Herausforderungen. Auch wenn die Ergebnisse besser wurden, kam es immer wieder zu unbeantworteten Fragen. Um besser zu verstehen, was zu solch einem Fehlverhalten führen kann, müssen auf diesen Abschnitt genauer eingehen.
 
 In einem Chat kann es vorkommen, dass sich eine Folgefrage auf den Chatverlauf bezieht. Ein Beispiel:
 
@@ -63,16 +64,13 @@ Wenn wir stets die letzte Frage für die Suche nach passenden Inhalten heranzieh
 
 ---
 
----
-
-
 Die beste Lösung bestand darin, die KI um eine geeignete Datenbankabfrage zu bitten. Daher habe ich den Chatverlauf zusammen mit einigen Anweisungen an GPT-4 gesendet. Als Ergebnis erhielt ich einen kompakten Satz, welcher - wie die Texte der Website - in einen Vektor umgewandelt wurde.
 
 >[!info] Hier ein Beispiel aus einem fiktiven Chatverlauf:
 >
 > ![inquiry template](notes/images/Inquiry-Template.png)
 
-Durch diesen "Frage-Vektor "ist es nun möglich, relevante Inhalte aus der Datenbak zu entnehmen
+Durch diesen "Frage-Vektor "ist es nun möglich, relevante Inhalte aus der Datenbak zu entnehmen.
 
 **Wer mehr über diese Suchanfrage erfahren möchte, findet weitere Infos unter  [[notes/OMRChat/Inquiry Template]]**
 
@@ -84,7 +82,7 @@ Durch diesen "Frage-Vektor "ist es nun möglich, relevante Inhalte aus der Daten
 
 ## Die Hochzeit
 
-Im letzten Schritt senden wir die Textblöcke aus der Datenbank, zusammen mit dem Chatverlauf des Nutzers und einer Anweisung an GPT-4. Als Ergebnis erhalten wir eine finale Antwort, welche wir dem Nutzer anzeigen können. Eine detaillierte Beschreibung des finalen Prompts findest du unter: [[notes/OMRChat/Final Prompt]]
+Im letzten Schritt sende ich die Textblöcke aus der Datenbank, zusammen mit dem Chatverlauf des Nutzers und einer Anweisung an GPT-4. Als Ergebnis erhalten wir eine finale Antwort, welche wir dem Nutzer anzeigen können. Eine detaillierte Beschreibung des finalen Prompts findest du unter: [[notes/OMRChat/Final Prompt]]
 
 ## Bonus: Prompt Engineering
 
@@ -130,4 +128,3 @@ Oder
 >
 >Hey Leute, hier ist die Zusammenfassung, Alter! Jeremy spricht über das Gewinner-Mindset, Autosuggestionen und sich selbst zur Marke machen. Er betont, wie wichtig es ist, sich immer wie ein Gewinner zu fühlen und in einer hohen Energie zu sein, um Aufmerksamkeit zu erregen. Er erklärt, wie er auf TikTok erfolgreich ist und wie er sein Geld verdient, vor allem durch den Verkauf seiner eigenen Produkte. Also, Leute, denkt immer an euer Gewinnermindset, habt geile Autosuggestionen und macht aus euch eine krasse Brand! Power, Power, Kraft, Power, Strength!
 
-Das alles und noch viel mehr

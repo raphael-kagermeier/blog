@@ -28,20 +28,24 @@ Die erste Herausforderung bestand darin, alle relevanten Daten von Webseiten wie
 
 ## Vektor-Datenbank
 
-Was ist ein Vektor in diesem Kontext? 
-Ein Textvektor, auch bekannt als Embedding, ist eine Methode zur mathematischen Darstellung von Text und seiner Bedeutung.
+In der Vektor-Datenbank sind die mit Hilfe von Embeddings aufbereiteten Texte in Form von Vektoren gespeichert.
 
-Zum Beispiel könnte ein Vektor zur Klassifizierung von Tieren in zwei Dimensionen dargestellt werden: ["Größe" und "Geschwindigkeit"]. Ein Hund hätte dann einen Vektor von [5, 3], weil er mittelgroß ist, aber nicht so schnell wie ein Gepard. Ein Elefant hätte einen Vektor von [8, 2], der Esel [7, 1] und eine Katze von [4, 3].
+Doch was sind Vektoren in diesem Kontext und wozu werden sie verwendet? 
+
+Ein Vektor ist eine Liste von Zahlen, welche aus dem jeweiligen Text generiert wird. Der eintscheidende Vorteil dieser Umwandlung liegt darin, dass sich Zahlen deutlich besser eignen um Texte miteinander zu vergleichen. Die Distanz zwischen zwei Vektoren ist dabei ein Indikator, wie ähnlich zwei Texte und dessen Inhalte sind.
+
+Diese Eigenschaft wird in der Anwendung des OMR-Chatbots genutzt, um auf Fragen des Nutzers alle relevanten Texte aus der Vektor-Datenbank für den weiteren Prozess zu sammeln und um schlussendlich auch eine relevante (und richtige) Antwort geben zu können.
+
+Um Vektoren etwas anschaulicher zu erklären noch ein kleines Beispiel:
+Man könnte einen Vektor zur Klassifizierung von Tieren entwerfen, welcher jeder Tierart einen 2-Dimensionalen Vektor zuordnet, z.B.: Größe und Geschwindigkeit. Ein Hund hätte dann einen Vektor von [5, 2], weil er mittelgroß ist, aber nicht sonderlich schnell. Ein Elefant hätte einen Vektor von [8, 2], der Esel [7, 1] und eine Katze von [5, 3].
 
 ![animal vektor](notes/images/Vektor.png)
 
-Bei dieser Darstellung ist erkennbar, dass die Katze dem Hund ähnlicher als dem Esel ist.
+Mit dieser Darstellung können die verschiedenen Tierarten leicht miteinander verglichen werden. Auch hier lässt die Distanz zwischen den Vektoren zweier Tierarten auf ihre Ähnlichkeit schließen. Beispielsweise ist der Hund der Katze recht ähnlich, jedoch weit weniger als dem Elefanten.
 
-In unserem Beispiel hat der Vektor nur zwei Dimensionen ["Größe" und "Geschwindigkeit"]. Text-Vektoren, die u.a. [bei Google](https://code.google.com/archive/p/word2vec/) zum Einsatz kommen, sind deutlich umfangreicher, um semantische Beziehungen zwischen Wörtern zu verstehen.
+In unserem Beispiel hat der Vektor nur zwei Dimensionen. Text-Vektoren, die u.a. [bei Google](https://code.google.com/archive/p/word2vec/) zum Einsatz kommen, sind deutlich umfangreicher, um semantische Beziehungen zwischen Texten zu verstehen.
 
 Im Fall des OMRChat habe ich mich auf das Modell von OpenAI (text-embedding-ada-002) verlassen. Dieses umfasst 1536 Dimensionen und ist daher ideal für die Textsuche.
-
-Durch die Zahlen im Vektor, kann die Distanz der einzelnen Website-Texte zu der Frage des Nutzers berechnet werden.
 
 ---
 
@@ -84,6 +88,8 @@ Durch diesen "Frage-Vektor "ist es nun möglich, relevante Inhalte aus der Daten
 
 Im letzten Schritt sende ich die Textblöcke aus der Datenbank, zusammen mit dem Chatverlauf des Nutzers und einer Anweisung an GPT-4. Als Ergebnis erhalten wir eine finale Antwort, welche wir dem Nutzer anzeigen können. Eine detaillierte Beschreibung des finalen Prompts findest du unter: [[notes/OMRChat/Final Prompt]]
 
+---
+
 ## Bonus: Prompt Engineering
 
 Jetzt, wo wir Beispiele für die Arbeit mit Prompts gesehen haben, möchte ich noch kurz über Prompt-Engineering sprechen – eine neu entstehende Fähigkeit an sich.
@@ -96,6 +102,8 @@ Prompt-Engineering besteht aus drei Hauptkomponenten:
 3. **Anweisungen**: Wir müssen der AI präzise Anweisungen geben. Wie du in dem [[notes/OMRChat/Inquiry Template]] gesehen hast, haben wir eine Liste von Anweisungen definiert, die genau zeigen, wie die Anfrage interpretiert werden soll und wie sie mit der vom Nutzer erhaltenen Frage kombiniert werden soll.
 
 Beim Prompt-Engineering geht es um Trial and Error, ein Wechselspiel aus Iteration und Optimierung. Indem wir unsere Prompts verfeinern, entwickeln wir ein tieferes Verständnis dafür, wie wir effektiv mit der AI kommunizieren können und verwandeln sie in ein zuverlässigeres und effizienteres Werkzeug.
+
+---
 
 ## Wie geht's weiter?
 Das OMR Festival 2023 ist nun vorüber und somit auch das exponentielle Wachstum des OMRChat.

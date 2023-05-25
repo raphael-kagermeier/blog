@@ -3,8 +3,9 @@ title: Raphael Kagermeier
 enableToc: false
 ---
 
+# 👋 
 
 # [OMRChat Erfahrungen](notes/OMRChat/Erfahrungen)
-Um zu verstehen, wie der Chatbot funktioniert, müssen wir uns zunächst das zugrunde liegende System anschauen. Dieses lässt sich in drei Bereiche unterteilen...
+Um den Ablauf des Chatbots zu verstehen, sollten wir uns zuerst die grundlegende Struktur ansehen. Diese gliedert sich in drei Bereiche...
 
 ---

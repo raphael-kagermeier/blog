@@ -1,7 +1,8 @@
 <header>
     {{ $config := cond (eq $.Site.Language.Lang "de") "config" (printf "config.%s" $.Site.Language.Lang) }}
     <h1 id="page-title">
-      <a class="root-title" href="{{ "" | absLangURL }}">{{ ( index $.Site.Data $config ).page_title | default $.Site.Data.config.page_title }}</a>
+      <!-- <a class="root-title" href="{{ "" | absLangURL }}">{{ ( index $.Site.Data $config ).page_title | default $.Site.Data.config.page_title }}</a> -->
+      <a class="root-title" href="#">{{ ( index $.Site.Data $config ).page_title | default $.Site.Data.config.page_title }}</a>
       <span class="logo__cursor"></span>
     </h1>
     <div class="spacer"></div>

@@ -76,6 +76,8 @@
   <link href="{{$lightSyntax.Permalink}}" rel="stylesheet" id="theme-link">
 
    <!-- Base scripts -->
+   <script src="//unpkg.com/alpinejs" defer></script>
+
   {{$scripts := (slice "js/darkmode.js" "js/util.js")}}
   {{range $scripts}}
   {{$scriptname := .}}
@@ -264,4 +266,33 @@
   {{ $trimmedURL := trim (index (split .Site.BaseURL "://") 1) "/" }}
   <script defer data-domain="{{$trimmedURL}}" src="https://plausible.io/js/script.js"></script>
   <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
+  <script>
+    window.onload = function() {
+      var typewriterElements = document.getElementsByClassName('typewriter');
+    
+      for (let j = 0; j < typewriterElements.length; j++) {
+        let i = 0;
+        let text = typewriterElements[j].getAttribute('data-text');
+        let speed = parseInt(typewriterElements[j].getAttribute('data-speed'));
+        let delay = parseInt(typewriterElements[j].getAttribute('data-delay'));
+    
+        function typeWriter() {
+          if (i < text.length) {
+            typewriterElements[j].innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          } else {
+            typewriterElements[j].classList.remove('typewriter-cursor');
+          }
+        }
+    
+        setTimeout(function() {
+          typewriterElements[j].classList.add('typewriter-cursor');
+          typeWriter();
+        }, delay);
+      }
+    };
+    
+  </script>
 </head>

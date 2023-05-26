@@ -73,3 +73,26 @@
 }
 
 
+/* Typing animation */
+.typewriter-cursor:after {
+  content: "|";
+  white-space: pre-wrap;
+  animation: cursor 1s infinite;
+}
+
+.enter-wink {
+  animation-duration: 0.5s;
+  animation-name: wink;
+  animation-fill-mode: backwards;
+}
+
+@keyframes wink {
+  from {
+    transform: scale(2) rotate(60deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}

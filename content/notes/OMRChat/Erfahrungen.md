@@ -3,7 +3,7 @@ title: Erfahrungen und Erkentnisse auf dem Weg zum OMRChat.
 ---
 
 ![Hey Raphaelo](/notes/images/hey-raphaelo.png)
-Mit einer einfachen Frage begannen fünf intensive Tage, in denen ich viel über Prompt Engineering und AI Chatbots lernte. Als mir Philipp Glöckler, einer der Hosts des [Doppelgänger Tech Talk Podcast](https://www.doppelgaenger.io/) schrieb, hatte ich nichts weiter als einen schlichten und wenig ansprechenden Prototypen eines Chatbots. Etwa 38 Stunden später stand der OMRChat in seiner rudimentären Form. In den darauffolgenden drei Tagen wurden weitere Optimierungen vorgenommen, sodass der Chatbot immer besser kommunizierte und Fragen beantworten konnte. In diesem Artikel erfährst du, was ich dabei gelernt habe und wie das System funktioniert.
+Mit dieser einfachen Frage begannen fünf intensive Tage, in denen ich viel über Prompt Engineering und KI Chatbots lernte. Als mir Philipp Glöckler, einer der Hosts des [Doppelgänger Tech Talk Podcast](https://www.doppelgaenger.io/) schrieb, hatte ich nichts weiter als einen schlichten und wenig ansprechenden Prototypen eines Chatbots. Etwa 38 Stunden später stand der OMRChat in seiner rudimentären Form. In den darauffolgenden drei Tagen wurden weitere Optimierungen vorgenommen, sodass der Chatbot immer besser kommunizieren und Fragen beantworten konnte. In diesem Artikel erfährst du, wie das System dahinter funktioniert und vorallem was ich dabei gelernt habe.
 
 ## Das Grundgerüst
 Um den Ablauf des Chatbots zu verstehen, sollten wir uns zuerst die grundlegende Struktur ansehen. Diese gliedert sich in drei Bereiche:
@@ -22,7 +22,7 @@ Um den Ablauf des Chatbots zu verstehen, sollten wir uns zuerst die grundlegende
 
 ## Daten und Indexierung
 
-Die erste Herausforderung bestand darin, alle relevanten Daten von Webseiten wie omr.com zu extrahieren. Dafür entwickelte ich einen OMRCrawler, der einen Browser imitiert und versteht, wie der Content richtig abgerufen werden kann – sprich: Auf die richtigen Buttons klicken, um Popups anzuzeigen und dann den wichtigen Text zu kopieren. Anschließend wurden die Textinhalte aufbereitet und in einer Vektor-Datenbank gespeichert.
+Die erste Herausforderung bestand darin, alle relevanten Daten von Webseiten wie omr.com zu extrahieren. Dafür entwickelte ich einen OMRCrawler, der einen Browser imitiert und versteht, wie der Content richtig abgerufen werden kann – sprich: Auf die richtigen Buttons klicken, um Popups anzuzeigen und dann den richtigen Text zu kopieren. Anschließend werden die Textinhalte aufbereitet und in einer Vektor-Datenbank gespeichert.
 
 ---
 
@@ -52,7 +52,7 @@ Im Fall des OMRChat habe ich mich auf das Modell von OpenAI (text-embedding-ada-
 ## Die Suchanfrage
 
 Nachdem wir nun unsere Texte und deren Vektoren in einer Datenbank gespeichert haben, geht es darum sie abzurufen. 
-Das war eine der größten Herausforderungen. Auch wenn die Ergebnisse besser wurden, kam es immer wieder zu unbeantworteten Fragen. Um besser zu verstehen, was zu solch einem Fehlverhalten führen kann, müssen auf diesen Abschnitt genauer eingehen.
+Das war eine der größten Herausforderungen. Auch wenn die Ergebnisse besser wurden, kam es immer wieder zu unbeantworteten Fragen. Um besser zu verstehen, was zu solch einem Fehlverhalten führen kann, müssen wir auf diesen Abschnitt genauer eingehen.
 
 In einem Chat kann es vorkommen, dass sich eine Folgefrage auf den Chatverlauf bezieht. Ein Beispiel:
 
@@ -68,19 +68,19 @@ Wenn wir stets die letzte Frage für die Suche nach passenden Inhalten heranzieh
 
 ---
 
-Die beste Lösung bestand darin, die KI um eine geeignete Datenbankabfrage zu bitten. Daher habe ich den Chatverlauf zusammen mit einigen Anweisungen an GPT-4 gesendet. Als Ergebnis erhielt ich einen kompakten Satz, welcher - wie die Texte der Website - in einen Vektor umgewandelt wurde.
+Die beste Lösung bestand darin, die KI um eine geeignete Datenbankabfrage zu bitten. Daher sende ich den Chatverlauf zusammen mit einigen Anweisungen an GPT-4, um aus dem Kontext heraus einen kompakten Satz für die Datenbankabfrage generieren zu lassen. Dieser Satz wird - wie die Texte der Website - in einen Vektor umgewandelt und mit den Vektoren aus der Datenbank verglichen.
 
 >[!info] Hier ein Beispiel aus einem fiktiven Chatverlauf:
 >
 > ![inquiry template](notes/images/Inquiry-Template.png)
 
-Durch diesen "Frage-Vektor "ist es nun möglich, relevante Inhalte aus der Datenbak zu entnehmen.
+Durch diesen "Frage-Vektor" ist es nun möglich, relevante Inhalte aus der Datenbak zu entnehmen.
 
 **Wer mehr über diese Suchanfrage erfahren möchte, findet weitere Infos unter  [[notes/OMRChat/Inquiry Template]]**
 
 >[!tip]- Für Nerds
 >
->Durch die Berechnung mittels Cosine Similarity wurden die 1914 Inhalte gerankt und die Top 3 Ergebnisse zur Beantwortung der Frage herangezogen.
+>Durch die Distanz-Berechnung mittels Cosine Similarity wurden die 1914 Inhalte gerankt und die Top 3 Ergebnisse zur Beantwortung der Frage herangezogen.
 
 ---
 
@@ -94,14 +94,14 @@ Im letzten Schritt sende ich die Textblöcke aus der Datenbank, zusammen mit dem
 
 Jetzt, wo wir Beispiele für die Arbeit mit Prompts gesehen haben, möchte ich noch kurz über Prompt-Engineering sprechen – eine neu entstehende Fähigkeit an sich.
 
-Prompt-Engineering ist der Prozess, Prompts oder Aufgaben sorgfältig zu definieren, um die genauesten und nützlichsten Antworten von der AI zu erhalten. Obwohl diese Modelle unglaublich leistungsstark und vielseitig sind, brauchen sie aktuell eine Anleitung, um die Arbeit wirklich korrekt zu erledigen.
+Prompt-Engineering ist der Prozess, Prompts oder Aufgaben sorgfältig zu definieren, um die genauesten und nützlichsten Antworten von der KI zu erhalten. Obwohl diese Modelle unglaublich leistungsstark und vielseitig sind, brauchen sie aktuell eine Anleitung, um die Arbeit wirklich korrekt zu erledigen.
 
 Prompt-Engineering besteht aus drei Hauptkomponenten:
-1. **Formulierung**: Wir müssen mit verschiedenen Möglichkeiten experimentieren, um unsere Prompts zu präsentieren. Ziel ist es, die perfekte Balance zwischen Klarheit und Interpretation zu finden, um sicherzustellen, dass die AI genau versteht, wonach wir suchen.
+1. **Formulierung**: Wir müssen mit verschiedenen Möglichkeiten experimentieren, um unsere Prompts zu präsentieren. Ziel ist es, die perfekte Balance zwischen Klarheit und Interpretation zu finden, um sicherzustellen, dass die KI genau versteht, wonach wir suchen.
 2. **Kontext**: Wir müssen unseren Aufforderungen Kontext hinzufügen, um der AI zu helfen, das größere Bild zu "verstehen". Dies kann beinhalten, Hintergrundinformationen bereitzustellen, oder das Modell sogar sanft in eine bestimmte Denkrichtung zu lenken.
-3. **Anweisungen**: Wir müssen der AI präzise Anweisungen geben. Wie du in dem [[notes/OMRChat/Inquiry Template]] gesehen hast, haben wir eine Liste von Anweisungen definiert, die genau zeigen, wie die Anfrage interpretiert werden soll und wie sie mit der vom Nutzer erhaltenen Frage kombiniert werden soll.
+3. **Anweisungen**: Wir müssen der KI präzise Anweisungen geben. Wie du in dem [[notes/OMRChat/Inquiry Template]] gesehen hast, haben wir eine Liste von Anweisungen definiert, die genau zeigen, wie die Anfrage interpretiert werden soll und wie sie mit der vom Nutzer erhaltenen Frage kombiniert werden soll.
 
-Beim Prompt-Engineering geht es um Trial and Error, ein Wechselspiel aus Iteration und Optimierung. Indem wir unsere Prompts verfeinern, entwickeln wir ein tieferes Verständnis dafür, wie wir effektiv mit der AI kommunizieren können und verwandeln sie in ein zuverlässigeres und effizienteres Werkzeug.
+Beim Prompt-Engineering geht es um Trial and Error, ein Wechselspiel aus Iteration und Optimierung. Indem wir unsere Prompts verfeinern, entwickeln wir ein tieferes Verständnis dafür, wie wir effektiv mit der KI kommunizieren können und verwandeln sie in ein zuverlässigeres und effizienteres Werkzeug.
 
 ---
 
